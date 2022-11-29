@@ -5,9 +5,9 @@ public class Money {
 
     Money(int itemPrice){price = itemPrice;}
 
-    public Money add(Money addMoney){
-        price += addMoney.price;
-        return new Money(price);
+    public void add(Money addMoney){
+        price += addMoney.getPrice();
+        //return new Money(price);
     }
 
     
@@ -16,9 +16,10 @@ public class Money {
     }
 
     public Money times(int quantity){
-        Money timeMoney = new Money(price);
-        timeMoney.price *= quantity;
-        return timeMoney;
+
+        //timeMoney.price *= quantity;
+        //price *= quantity;
+        return new Money((this.price*quantity));
     }
 
     public int getPrice(){return price;}

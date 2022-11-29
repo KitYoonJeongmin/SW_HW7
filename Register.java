@@ -9,10 +9,10 @@ public class Register {
 
 	public void endSale()  {   sale.becomeComplete(); }
 
-    public int enterItem(ItemID id, int quantity) {
+    public void enterItem(ItemID id, int quantity) {
+        
         ProductSpecification spec = catalog.getSpecification(id);
-        int sliNum = sale.makeLineItem(spec, quantity);
-        return sliNum;
+        sale.makeLineItem(spec, quantity);
     }
 
     public Sale makeNewSale() { 

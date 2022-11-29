@@ -12,4 +12,6 @@ public class SalesLineltem {
 
     public Money getSubtotal() {   return productSpec.getPrice().times(quantity);  } //Money에 times 함수 생성
 
+    public ProductSpecification getProductSpec() {return productSpec;}
+
 }

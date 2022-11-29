@@ -8,6 +8,7 @@ import static org.junit.Assert.assertTrue;
 public class Test {
     Store store = new Store();
     Sale sale = new Sale();
+
     @org.junit.Test
     public void makeSaleTest(){
         sale = store.getRegister().makeNewSale();
@@ -17,8 +18,9 @@ public class Test {
     @org.junit.Test
     public void enterItemTest(){
         sale = store.getRegister().makeNewSale();
-        int sliNum = store.getRegister().enterItem(new ItemID(0),10);   //item discription을 넣어줘야 됨
-        assertEquals(sliNum, 1);
+        store.getRegister().enterItem(new ItemID(200),10);
+        SalesLineltem sli = sale.getSliList().get(0);
+        System.out.println(sli.getProductSpec().getDescription());
     } 
     @org.junit.Test
     public void endSaleTest(){
@@ -35,10 +37,11 @@ public class Test {
     @org.junit.Test
     public void printBillTest(){
         sale = store.getRegister().makeNewSale();
-        //store.getRegister().enterItem(null, 10);
+        store.getRegister().enterItem(new ItemID(100), 10);
+        store.getRegister().enterItem(new ItemID(200), 10);
         store.getRegister().endSale();
         store.getRegister().makePayment(new Money(500));
-        String bill = sale.printBill();
+        String bill = store.getRegister().getSale().printBill();
         System.out.println(bill);
     }
 

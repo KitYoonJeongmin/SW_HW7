@@ -1,9 +1,9 @@
 package 과제7;
-import java.util.HashMap;
+import java.util.*;
 
 public class ProductCatalog {
     private HashMap<ItemID,ProductSpecification> productSpecifications = new HashMap<ItemID,ProductSpecification>();
-
+    
     public ProductCatalog() {
         // sample data
         ItemID idl = new ItemID(100);
@@ -17,6 +17,7 @@ public class ProductCatalog {
     }
 
     public ProductSpecification getSpecification(ItemID id) {
-        return (ProductSpecification) productSpecifications.get(id);
+
+        return productSpecifications.get(id);
     }
 }

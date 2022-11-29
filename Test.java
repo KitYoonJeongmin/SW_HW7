@@ -33,9 +33,13 @@ public class Test {
         assertEquals(payment.getAmount().getPrice(), new Money(500).getPrice());  
     }
     @org.junit.Test
-    public void printBill(){
+    public void printBillTest(){
         sale = store.getRegister().makeNewSale();
-        
+        //store.getRegister().enterItem(null, 10);
+        store.getRegister().endSale();
+        store.getRegister().makePayment(new Money(500));
+        String bill = sale.printBill();
+        System.out.println(bill);
     }
 
     

@@ -67,7 +67,7 @@ public class Sale {
 
         String bill = new String();
         bill = getDate()+"\n";
-
+        bill += "num     물품     수량\n";
         Iterator<String> k = sliLog.iterator( ) ;    
         while ( k.hasNext()){
             bill+=(String) k.next()+"\n";

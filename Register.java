@@ -5,7 +5,10 @@ public class Register {
     private ProductCatalog catalog;
     private Sale sale;
 
-    public Register(ProductCatalog catalog) {  this.catalog = catalog; }
+    public Register(ProductCatalog catalog) { 
+         this.catalog = catalog; 
+         
+    }
 
 	public void endSale()  {   sale.becomeComplete(); }
 

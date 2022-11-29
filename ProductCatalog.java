@@ -20,4 +20,8 @@ public class ProductCatalog {
 
         return productSpecifications.get(id);
     }
+
+    public HashMap<ItemID,ProductSpecification> getProductSpecifications(){
+        return productSpecifications;
+    }
 }

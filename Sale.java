@@ -20,9 +20,6 @@ public class Sale {
     public void makeLineItem(ProductSpecification spec, int quantity) {
         
         lineltems.add(new SalesLineltem(spec, quantity));
-        
-       
-
     }
 
     public Money getTotal()
